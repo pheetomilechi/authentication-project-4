@@ -9,7 +9,8 @@ Project 4: Authentication SBTS
 6. [OAuth (Third-Party Authentication)](6-oauth-third-party-authentication)
 7. [API Key Authentication](7-api-key-authentication)
 8. [Bonus: Swagger / OpenAPI Docs](8-bonus-swagger--openapi-docs)
-9. [Bonus: What Problem is React Node Framework Solving?](9-bonus-what-problem-is-react-node-framework-solving)
+9. [Bonus: What Problem is React Node Framework Solving?]
+10. bonus-what-problem-is-react-node-framework-solving
 
 
 
