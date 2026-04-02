@@ -99,6 +99,36 @@ The server will start on the default port (typically 3000).
 - **HttpOnly Cookies** - Prevents XSS attacks by restricting cookie access
 - **Secure Storage** - Sensitive data isolation and protection
 
----
+# 1. Register a user
+curl -X POST http://localhost:3000/auth/password/register \
+  -H "Content-Type: application/json" \
+  -d '{"username":"john","password":"mypassword123"}'
+
+# 2. Password Login
+curl -X POST http://localhost:3000/auth/password/login \
+  -H "Content-Type: application/json" \
+  -d '{"username":"john","password":"mypassword123"}'
+
+# 3. Token Login
+curl -X POST http://localhost:3000/auth/token/login \
+  -H "Content-Type: application/json" \
+  -d '{"username":"john","password":"mypassword123"}'
+
+# 4. Verify Token (replace TOKEN)
+curl -X GET http://localhost:3000/auth/token/verify \
+  -H "Authorization: Bearer YOUR_TOKEN_HERE"
+
+# 5. Session Login
+curl -X POST http://localhost:3000/auth/session/login \
+  -H "Content-Type: application/json" \
+  -d '{"username":"john","password":"mypassword123"}' \
+  -c cookies.txt
+
+# 6. Get Profile (using session)
+curl -X GET http://localhost:3000/auth/session/profile -b cookies.txt
+
+# 7. Logout
+curl -X POST http://localhost:3000/auth/session/logout -b cookies.txt
 
 **Learn more** - See [research/authentication-reserach.md](research/authentication-reserach.md) for detailed authentication concepts and implementation notes.
+
